@@ -9,7 +9,7 @@
     //Connect to the SQL database.
     //We do this using the mysqli_connect API
     //$connection=mysqli_connect(server,username,password,)
-    $connection=mysqli_connect('localhost','root','','trafficvc');
+    $connection=mysqli_connect('localhost','root','password','trafficvc');
     //Checking the connection.
     if (!$connection) {
         die("Database connection failed.");
