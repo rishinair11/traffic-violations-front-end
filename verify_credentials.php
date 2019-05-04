@@ -34,7 +34,7 @@
           //Connect to the SQL database.
           //We do this using the mysqli_connect API
           //$connection=mysqli_connect(server,username,password,)
-          $userconnection=mysqli_connect('localhost','root','','trafficvc');
+          $userconnection=mysqli_connect('localhost','root','password','trafficvc');
           //Checking the connection.
           if (!$userconnection) {
               die("Database connection failed.");
@@ -90,7 +90,7 @@
           //Connect to the SQL database.
           //We do this using the mysqli_connect API
           //$connection=mysqli_connect(server,regname,password,)
-          $regconnection=mysqli_connect('localhost','root','','trafficvc');
+          $regconnection=mysqli_connect('localhost','root','password','trafficvc');
           //Checking the connection.
           if (!$regconnection) {
               die("Database connection failed.");
@@ -158,7 +158,7 @@
           //Connect to the SQL database.
           //We do this using the mysqli_connect API
           //$connection=mysqli_connect(server,authname,password,)
-          $authconnection=mysqli_connect('localhost','root','','trafficvc');
+          $authconnection=mysqli_connect('localhost','root','password','trafficvc');
           //Checking the connection.
           if (!$authconnection) {
               die("Database connection failed.");
