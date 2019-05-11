@@ -26,11 +26,15 @@
         // Get textarea content
         $msg=htmlspecialchars($_POST['descriptionmsg']); 
 
-        $query = "INSERT INTO cases(reporterid,proof,licenseplatepic,description) VALUES ('$reporterid','$proof','$license','$msg')";  
+        $query = "INSERT INTO cases (reporterid,proof,licenseplatepic,description) VALUES ('".$reporterid."','".$proof."','".$license."','".$msg."')";  
         if(mysqli_query($connection, $query))  
         {  
             echo '<script>alert("Data submitted successfully!")</script>';  
-        }
+        } else {
+       	    echo mysqli_error($connection);
+	    echo '<script>alert("error")</script>';
+
+	}
     } 
 
 ?>
