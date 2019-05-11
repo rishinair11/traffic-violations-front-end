@@ -297,7 +297,42 @@
                                             <?php echo $rowv['datestamp']; ?>   
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-primary">Approve</button>
+                                            <form action="" method="post">
+                                                <?php 
+                                                    if($rowv['approval']=="0")
+                                                    {
+                                                ?>
+                                                        <input name="approve" value="Approve" type="submit" class="btn btn-danger"> </input>
+                                                <?php 
+                                                    } 
+                                                ?>
+                                                <?php 
+                                                    if($rowv['approval']=="1")
+                                                    {
+                                                ?>
+                                                        <input name="approve" value="Approve" type="submit" class="btn btn-sucess"> </input>
+                                                <?php 
+                                                    } 
+                                                ?>   
+                                            </form>
+                                            <?php
+                                                if(isset($_POST['approve'])){
+                                                    if($rowv['approval'] == "0"){
+                                                        $approval_status = '1';
+                                                    }
+                                                    else{
+                                                        $approval_status = '0';
+                                                    }
+                                                    $updateQuery = "UPDATE cases SET approval = ".$approval_status." WHERE caseid = ".$rowv['caseid'];
+                                                    
+                                                    if(mysqli_query($connection, $updateQuery)){
+                                                        echo "Record updated successfuly";
+                                                    } else {
+                                                        echo "Error in updating record";
+                                                    }
+                                                    
+                                                }
+                                            ?>
                                         </td>
                                     </tr>
                                     <?php  
