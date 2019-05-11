@@ -268,6 +268,7 @@
                                 <thead>
                                     <tr>
                                         <th>Case Id</th>
+                                        <th>Aadhar ID</th>
                                         <th>License Plate No</th>
                                         <th>Proof</th>
                                         <th>Description</th>
@@ -402,6 +403,7 @@
                                 <thead>
                                     <tr>
                                         <th>Case Id</th>
+                                        <th>Aadhar ID</th>
                                         <th>License Plate No</th>
                                         <th>Proof</th>
                                         <th>Description</th>
