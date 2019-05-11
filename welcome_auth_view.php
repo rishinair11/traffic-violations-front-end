@@ -285,6 +285,9 @@
                                             <?php echo $rowv['caseid']; ?>
                                         </td>
                                         <td>
+                                            <?php echo $rowv['aadharid']; ?>
+                                        </td>
+                                        <td>
                                             <?php echo $rowv['licenseplateno']; ?>
                                         </td>
                                         <td>  
@@ -310,7 +313,7 @@
                                                     if($rowv['approval']=="1")
                                                     {
                                                 ?>
-                                                        <input name="approve" value="Approve" type="submit" class="btn btn-sucess"> </input>
+                                                        <input name="approve" value="Approved" type="submit" class="btn btn-sucess"> </input>
                                                 <?php 
                                                     } 
                                                 ?>   
@@ -414,6 +417,9 @@
                                     <tr>  
                                         <td>
                                             <?php echo $rowv['caseid']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $rowv['aadharid']; ?>
                                         </td>
                                         <td>
                                             <?php echo $rowv['licenseplateno']; ?>
