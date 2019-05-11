@@ -32,9 +32,8 @@
             echo '<script>alert("Data submitted successfully!")</script>';  
         } else {
        	    echo mysqli_error($connection);
-	    echo '<script>alert("error")</script>';
-
-	}
+	        echo '<script>alert("error")</script>';
+	    }
     } 
 
 ?>
