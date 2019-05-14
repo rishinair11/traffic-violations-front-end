@@ -306,7 +306,7 @@
                                                     if($rowv['approval']=="0")
                                                     {
                                                 ?>
-                                                        <input name="approve" value="Approve" type="submit" class="btn btn-danger"> </input>
+                                                        <input name="approve<?php echo $rowv['caseid']?>" value="Approve" type="submit" class="btn btn-danger"> </input>
                                                 <?php 
                                                     } 
                                                 ?>
@@ -314,13 +314,13 @@
                                                     if($rowv['approval']=="1")
                                                     {
                                                 ?>
-                                                        <input name="approve" value="Approved" type="submit" class="btn btn-sucess"> </input>
+                                                        <input name="approve<?php echo $rowv['caseid']?>" value="Approved" type="submit" class="btn btn-sucess"> </input>
                                                 <?php 
                                                     } 
                                                 ?>   
                                             </form>
                                             <?php
-                                                if(isset($_POST['approve'])){
+                                                if(isset($_POST['approve'.$rowv['caseid']])){
                                                     if($rowv['approval'] == "0"){
                                                         $approval_status = '1';
                                                     }
@@ -328,13 +328,12 @@
                                                         $approval_status = '0';
                                                     }
                                                     $updateQuery = "UPDATE cases SET approval = ".$approval_status." WHERE caseid = ".$rowv['caseid'];
-                                                    
-                                                    if(mysqli_query($connection, $updateQuery)){
-                                                        echo "Record updated successfuly";
-                                                    } else {
+                                                    $result = mysqli_query($connection, $updateQuery);
+                                                    if(!$result){
                                                         echo "Error in updating record";
+                                                    } else {
+                                                        echo "Record updated successfuly";
                                                     }
-                                                    
                                                 }
                                             ?>
                                         </td>
