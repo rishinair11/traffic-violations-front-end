@@ -231,7 +231,7 @@
                             </div>
                             <?php 
 
-                                $queryv = "SELECT * FROM (cases JOIN vehicleregistration ON aadharid=id) where (seen='0' AND approval='0') ORDER BY datestamp DESC";
+                                $queryv = "SELECT * FROM (cases JOIN vehicleregistration ON aadharid=id) where approval='0' ORDER BY datestamp DESC";
                                 $resultv = mysqli_query($connection, $queryv);
                                 //If search is done
                                 if(isset($_GET['searchsubmit']))
@@ -246,7 +246,7 @@
                                       // makes sure nobody uses SQL injection
 
                                       // $querysearch="SELECT * FROM (SELECT * FROM (cases JOIN vehicleregistration ON aadharid=id) where seen='0' ) WHERE (('caseid' LIKE '%".$search_string."%') OR ('licenseplateno' LIKE '%".$search_string."%')) ORDER BY datestamp DESC";
-                                      $querysearch="SELECT * FROM cases JOIN vehicleregistration ON aadharid=id WHERE (seen='0' AND approval='0' AND (`caseid` LIKE '%".$search_string."%') OR (`description` LIKE '%".$search_string."%'))";
+                                      $querysearch="SELECT * FROM cases JOIN vehicleregistration ON aadharid=id WHERE approval='0' AND (`caseid` LIKE '%".$search_string."%') OR (`description` LIKE '%".$search_string."%')";
 
                                        
                                       $resultv = mysqli_query($connection,$querysearch) or die(mysql_error());
